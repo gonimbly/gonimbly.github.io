@@ -5,11 +5,6 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Engager : Heroku CX, Customer Rewards App">
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
     <title>Engager</title>
   </head>
   <body>
@@ -40,8 +35,111 @@
           </div><!--/.nav-collapse -->
       </div>
   </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h1>Setup</h1>
+          <p>The two step process for deploying Engager's API and UI. Deploy your own version of Engager using the Heroku buttons below:</p>
 
-    <h2>Setup</h2>
+          <p><a href="https://heroku.com/deploy?template=https://github.com/gonimbly/engager-api/tree/master" target="blank"><img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy"></a> <em>Engager API</em></p>
 
+          <p><a href="https://heroku.com/deploy?template=https://github.com/gonimbly/engager-ui/tree/master" target="blank"><img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy"></a> <em>Engager UI</em></p>
+
+          <h2>Deploying API to Heroku using the Command Line</h2>
+          <ol>
+              <li>
+                <p>Clone the API repository:</p>
+                <pre><code class="language-text" data-lang="text">git clone https://github.com/gonimbly/engager-api</code></pre>
+              </li>
+              <li>
+                <p>Create the Heroku app:</p>
+                <pre><code class="language-text" data-lang="text">heroku create</code></pre>
+              </li>
+              <li>
+                <p>Install Postgres:</p>
+                <pre><code class="language-text" data-lang="text">heroku addons:create heroku-postgresql:hobby-dev</code></pre>
+              </li>
+              <li>
+                <p>Install Redis:</p>
+                <pre><code class="language-text" data-lang="text">heroku addons:create heroku-redis:hobby-dev</code></pre>
+              </li>
+              <li>
+                <p>Deploy the Engager API:</p>
+                <pre><code class="language-text" data-lang="text">git push heroku master</code></pre>
+              </li>
+              <li>
+                <p>Initialize the database:</p>
+                <pre><code class="language-text" data-lang="text">heroku run bin/init-db</code></pre>
+              </li>
+          </ol>
+          <h2>Deploying UI to Heroku using the Command Line</h2>
+          <ol>
+              <li>
+                <p>Clone the UI repository:</p>
+                <pre><code class="language-text" data-lang="text">git clone https://github.com/gonimbly/engager-ui</code></pre>
+              </li>
+              <li>
+                <p>Create the Heroku app:</p>
+                <pre><code class="language-text" data-lang="text">heroku create</code></pre>
+              </li>
+              <li>
+                <p>Deploy the UI:</p>
+                <pre><code class="language-text" data-lang="text">git push heroku master</code></pre>
+              </li>
+          </ol>
+          <h2>Running Locally</h2>
+          <p>Two services need to be setup and started in order for the application to run locally. Also for the sake of easy setup, we'll be using the externally hosted heroku-postgres and heroku-redis databases to store information.</p>
+          <ol>
+              <li>
+                <p>Clone the API repository:</p>
+                <pre><code class="language-text" data-lang="text">git clone https://github.com/gonimbly/engager-api</code></pre>
+              </li>
+              <li>
+                <p>Install the dependencies:</p>
+                <pre><code class="language-text" data-lang="text">npm i</code></pre>
+              </li>
+              <li>
+                <p>Retrieve database environment variables Heroku (must run "heroku addons:create .." first):</p>
+                <pre><code class="language-text" data-lang="text">heroku config</code></pre>
+              </li>
+              <li>
+                <p>Set local environment variables (note ssl=true):</p>
+                <pre><code class="language-text" data-lang="text">export DATABASE_URL="postgres://{connection_str}?ssl=true"</code></pre>
+                <pre><code class="language-text" data-lang="text">export REDIS_URL="redis://{connection_str}"</code></pre>
+              </li>
+              <li>
+                <p>Initialize the database:</p>
+                <pre><code class="language-text" data-lang="text">./bin/init-db</code></pre>
+              </li>
+              <li>
+                <p>Start the API:</p>
+                <pre><code class="language-text" data-lang="text">npm run start</code></pre>
+              </li>
+              <li>
+                <p>In a new terminal tab, navigate up a directory and clone the UI repository:</p>
+                <pre><code class="language-text" data-lang="text">git clone https://github.com/gonimbly/engager-ui</code></pre>
+              </li>
+              <li>
+                <p>Install the dependencies:</p>
+                <pre><code class="language-text" data-lang="text">npm i</code></pre>
+              </li>
+              <li>
+                <p>Change the endpoint in index.html (note to use "http" if local, "https" if production):</p>
+                <pre><code class="language-text" data-lang="text">API_URL = "http://localhost:9001";</code></pre>
+              </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+  <div id="footer">
+    <p class="text-muted">Go Nimbly, 2015.</p>
+  </div>
+  <!-- Site footer --> 
+  </div>
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
   </body>
 </html>
