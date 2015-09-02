@@ -5,11 +5,6 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Engager : Heroku CX, Customer Rewards App">
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
     <title>Engager</title>
   </head>
   <body>
@@ -44,8 +39,33 @@
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <h1>Architecture</h1>
+          <div class="jumbotron">
+            <div class="container">
+                <div class="row" style="text-align: center">
+                    <h2>architecture image, heroku, reactjs, heroku connect</h2>
+                </div>
+            </div>
+          </div>
+          <h2>API Server</h2>
+          <p>The API utilizes a combination of open source technology and services to provide a speedy REST API for wide variety of potential client applications. On top of our postgres database, sits our ORM wrapper in Bookshelf, and API routes are exposed with Express. All protected endpoints will have a check against our redis database to ensure the user is properly authenticated and has access to these endpoints.</p>
+          
+          <h2>UI Server</h2>
+          <p>The UI is served from another Heroku app which is pointed at the API server. This ensures that our UI is only for servering UI and static files and our API is only concerned with ansering endpoint requests (no static files). This architecture helps to speed up the application experience, and provides a module design so we can make more client applications (iOS, android, desktop) and not have to rewrite any our API server.</p>
+
+          <h2>Salesforce UI</h2>
+          <p>If Heroku Connect is configured, answers to user questions will be pushed automatically into the Salesforce instance.</p>
         </div>
       </div>
     </div>
+    <div class="container">
+      <div id="footer">
+        <p class="text-muted">Go Nimbly, 2015.</p>
+      </div>
+      <!-- Site footer --> 
+    </div>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
   </body>
 </html>
