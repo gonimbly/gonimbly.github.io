@@ -1,3 +1,10 @@
 .jumbotron {
     margin-top: -20px;
 }
+
+.banner {
+	background-image: url(../images/engagr_blur.jpg);
+	background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
