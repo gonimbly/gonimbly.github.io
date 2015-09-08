@@ -41,11 +41,11 @@
           <h1>Setup</h1>
           <p>The two step process for deploying Engager's API and UI. Deploy your own version of Engager using the Heroku buttons below:</p>
 
-          <p><a href="https://heroku.com/deploy?template=https://github.com/gonimbly/engager-api/tree/master" target="blank"><img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy"></a> <em>Engager API</em></p>
+          <p><a href="https://heroku.com/deploy?template=https://github.com/gonimbly/engager-api/tree/master" target="blank"><img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy"></a> <em>Engager API (On successful deployment, there is no UI to view. Browser window will show "Cannot GET /" error)</em></p>
 
-          <p><a href="https://heroku.com/deploy?template=https://github.com/gonimbly/engager-ui/tree/master" target="blank"><img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy"></a> <em>Engager UI (use url from API as environment variable w/o the ending slash, ex: "https://engager-api123.herokuapp.com")</em></p>
+          <p><a href="https://heroku.com/deploy?template=https://github.com/gonimbly/engager-ui/tree/master" target="blank"><img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy"></a> <em>Engager UI (use url from API as config variable API_URL w/o the ending slash, ex: "https://engager-api123.herokuapp.com")</em></p>
 
-          <h2>Using Heroku Connect for answers</h2>
+          <h2>Using Heroku Connect for Answers (optional)</h2>
           <ol>
               <li>
                 <p>Install the <a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t61000000R1x2" target="blank">unmanaged package</a> to your desired salesforce org first.</p>
@@ -102,6 +102,10 @@
                 <p>Deploy the UI:</p>
                 <pre><code class="language-text" data-lang="text">git push heroku master</code></pre>
               </li>
+              <li>
+                <p>Set the API config variable:</p>
+                <pre><code class="language-text" data-lang="text">heroku config:set API_URL='https://sample-api-url.herokuapp.com'</code></pre>
+              </li>
           </ol>
           <h2>Running Locally</h2>
           <p>Two services need to be setup and started in order for the application to run locally. Also for the sake of easy setup, we'll be using the externally hosted heroku-postgres and heroku-redis databases to store information.</p>
@@ -140,8 +144,12 @@
                 <pre><code class="language-text" data-lang="text">npm i</code></pre>
               </li>
               <li>
-                <p>Change the endpoint in index.html (note to use "http" if local, "https" if production):</p>
-                <pre><code class="language-text" data-lang="text">API_URL = "http://localhost:9001";</code></pre>
+                <p>Set the API config variable:</p>
+                <pre><code class="language-text" data-lang="text">export API_URL='https://localhost:9000'</code></pre>
+              </li>
+              <li>
+                <p>Start the UI:</p>
+                <pre><code class="language-text" data-lang="text">gulp serve</code></pre>
               </li>
           </ol>
         </div>
