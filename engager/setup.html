@@ -52,14 +52,31 @@
                 <p>Install the <a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t61000000R1x2" target="blank">unmanaged package</a> to your desired salesforce org first.</p>
               </li>
               <li>
-                <p>In terminal, create heroku connect addon for your API:</p>
-                <pre><code class="language-text" data-lang="text">heroku addons:create herokuconnect:demo --app [API_APP_NAME]</code></pre>
+                <p>In Heroku UI of your new app, provision herokuconnect addon, via quick search addons menu.</p>
               </li>
               <li>
-                <p>Follow Heroku Connect <a href="https://devcenter.heroku.com/articles/herokuconnect#create-a-new-instance" target="blank">installation instructions</a>. Add SObject "Engager Answer" two way syncing. Keep schema as "salesforce"</p>
+                <p>Click the Heroku Connect addon, after creation to configure the service to your Salesforce instance.</p>
+              </li>
+              <li>
+                <p>Click next till you authorize the app and are at the Mappings configuration screen.</p>
+              </li>
+              <li>
+                <p>Create New Mapping</p>
+              </li>
+              <li>
+                <p>Select the managed package SObject "engager_answer__c" as the desired object.</p>
+              </li>
+              <li>
+                <p>Check the "Database->Salesforce" option and select the following fields: value__c, customer_name__c, questions_text__c.</p>
+              </li>
+              <li>
+                <p>Save.</p>
               </li>
               <li>
                 <p>Test by answering a question and see the answer in Salesforce "Engager" tab a few moments later</p>
+              </li>
+              <li>
+                <p>More info on <a href="https://devcenter.heroku.com/articles/herokuconnect#create-a-new-instance" target="blank">Heroku Connect here.</a></p>
               </li>
           </ol>
           <h2>Deploying API to Heroku using the Command Line</h2>
