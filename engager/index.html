@@ -6,7 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Engager : Heroku CX, Customer Rewards App">
     <title>Engager</title>
-    <script>
+    <style type="text/css">
+      .jumbotron.banner {
+        margin-top: -20px;
+        color: white;
+        background-color: #71C04F;
+        padding-top: 5px;
+        padding-bottom: 10px;
+      }
+
+      footer {
+        background-color: #71C04F;
+        height:10em;
+      }
+
+      .text-muted {padding: 1em;}
+
+      .main-content {
+        width:40em;
+        margin: 0 auto;
+        font-size: 1.2em;
+      }
+
+      .stack-card {
+        height: 300px;
+      }
+
+      .col-md-4 img {
+        margin:0 auto;
+
+        padding-top: 1em;
+      }
+
+      .navbar-brand {font-weight: bold;}
+
+      .featured-stack {padding-top: 3em;}
+      h2 {padding-top: 1.3em;}
+
+    </style>
+  <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -43,7 +81,7 @@
                   <a href="https://github.com/gonimbly/engager-ui">UI</a>
                 </li>
                 <li>
-                  <img src="images/blackoctocat.png" style="border: none;margin-top: 10px;height: 28px;width: 28px;"/>
+                  <img class="img-responsive"  src="http://gonimbly.github.io/engager/images/blackoctocat.png" style="border: none;margin-top: 10px;height: 28px;width: 28px;"/>
                 </li>
               </ul>
           </div><!--/.nav-collapse -->
@@ -62,100 +100,77 @@
     </div>
 
     <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <h2>Brief</h2>
-            <p>Customer success is an art that requires constant customer engagement. This engagement is often done through static tools that don’t reflect the dynamic nature of your business. </p> 
-            
-            <p>With the Heroku powered mobile framework, Engager, you can create dynamic surveys that offer rewards for your customers. Questions can be assigned unique point values that your customers can redeem for rewards like discounted Uber rides or Amazon.com credit.</p>
 
-            <p>Engager can use Heroku connect to get your customer success data into your Salesforce org where you can build dashboards and reports to take action on your findings.</p>
+    <div class="main-content">
+      <h2>Brief</h2>
+      <p>Customer success is an art that requires constant customer engagement. This engagement is often done through static tools that don’t reflect the dynamic nature of your business.</p>
 
-            <p>With Engager, customer success data can be used to empower sales, marketing, support, and finance in ways that seemed impossible before.</p>
+      <p>With the Heroku powered mobile framework, Engager, you can create dynamic surveys that offer rewards for your customers. Questions can be assigned unique point values that your customers can redeem for rewards like discounted Uber rides or Amazon.com credit.</p>
 
+      <p>Engager can use Heroku connect to get your customer success data into your Salesforce org where you can build dashboards and reports to take action on your findings.</p>
 
-            <h2>Use Case </h2>
-            <p>Imagine you are holding a conference and you would like to know how your customers are experiencing the event</p>
+      <p>With Engager, customer success data can be used to empower sales, marketing, support, and finance in ways that seemed impossible before.</p>
 
-            <p> Within the Engager framework, you could add a new question like, "How much are you enjoying the conference?”, assign a point value, and send a notification to all of your customers. </p>
+      <h2>Use Case</h2>
+      <p>Imagine you are holding a conference and you would like to know how your customers are experiencing the event.</p>
 
-            <p>The question is incentivized with a unique “point” value, driving your customers to answer the questions in the order that are most important to your business. </p>
+      <p>Within the Engager framework, you could add a new question like, "How much are you enjoying the conference?”, assign a point value, and send a notification to all of your customers.</p>
 
-            <p>Customers would login to the Engager mobile app, respond to the question, and earn points for their wallet at the same time as you’ve just gathered actionable insights.</p>
+      <p>The question is incentivized with a unique “point” value, driving your customers to answer the questions in the order that are most important to your business.</p>
 
-            <h2><a id="technical" class="anchor" href="#technical" aria-hidden="true"></a>Deploy</h2>
-            <div class="row">
-              <div class="col-md-6">
-                <p><a href="setup.html">Setup instructions</a> for Mobile Browser UI and API.</p>  
-              </div>
-              <div class="col-md-6">
-                <p>Checkout a <a href="http://gonimbly-engager.herokuapp.com/#/">working demo</a> of the app, a Mobile Browser ONLY, HTML5 application. Swipe interactions, are not currently configured to run in a Desktop Browser.</p> 
-              </div>
-            </div>
+      <p>Customers would login to the Engager mobile app, respond to the question, and earn points for their wallet at the same time as you’ve just gathered actionable insights.</p>
 
-            <h2><a id="technical" class="anchor" href="#technical" aria-hidden="true"></a>Stack</h2>
+      <h2>Deploy</h2>
 
-            <p>Built on Heroku with Nodejs and React/HTML/CSS, deliver value to your customer and your organization simultaneously. Rewards architecture to give valuable services to your customer. Seamless integration of key customer insights to your Sales Reps and Marketers with Heroku Connect. Configurable engagement tools stored in Postgres database to quickly and independently adapt to new markets.</p>
+      <p><a href="setup.html">Setup instructions</a> for Mobile Browser UI and API. Checkout a <a href="http://gonimbly-engager.herokuapp.com/#/">working demo</a> of the app, a Mobile Browser ONLY, HTML5 application. Swipe interactions, are not currently configured to run in a Desktop Browser.</p>
 
-          <div class="container">
-            <div class="row" style="padding-top: 4px;">
-                <div class="col-md-4">
-                    <div class="text-center">
-                        <img src="images/salesforce-logo.png" style="height: 100px;"/>
-                        <h3>Salesforce.com</h3>
-                    </div>
-                    <p>Using the Force.com platform, "Key customers insights" are integrated back into the place Reps and Marketers live, Salesforce.com. Allowing for immediate action and easy reporting to spot trends.</p>
-                </div>
+      <h2>Stack</h2>
 
-                <div class="col-lg-4">
-                    <div class="text-center">
-                        <img src="images/heroku-logo.png" style="height: 100px;"/>
-                        <h3>Heroku</h3>
-                    </div>
-                    <p>Everything is easier with the power of Heroku. We deploy to Heroku, so we can focus on building a great customer experience and less on tedious tasks.</p>
-                </div>
-            </div>
-            <div class="row" style="padding-top: 4px;">
-                <div class="col-lg-4">
-                    <div class="text-center">
-                        <img src="images/javascript-logo.png" style="height: 100px;"/>
-                        <h3>JavaScript</h3>
-                    </div>
-                    <p>JavaScript is powerful programming language with a vibrant and prolific open source community. Node.js powers the API, while ReactJS delivers rich experience to your customers.</p>
-                </div>
-                <div class="col-lg-4">
-                    <div class="text-center">
-                        <img src="images/redis-logo.png" style="height: 100px;"/>
-                        <h3>Redis</h3>
-                    </div>
-                    <p>Redis is commonly used as a datastore for user sessions, to enable quicker access and avoid hitting the database. Heroku now offers Redis natively, so keeping your app speedy is easier than ever.</p>
-                </div>
-            </div>
-            <div class="row" style="padding-top: 4px;">
-                <div class="col-lg-4">
-                    <div class="text-center">
-                        <img src="images/bookshelf-logo.png" style="height: 100px;"/>
-                        <h3>Bookshelf</h3>  
-                    </div>
-                    <p>ORMs have been around forever. It's super easy to access relational data with this handy javascript library, <a>Bookshelf</a>.</p>
-                </div>
-                <div class="col-lg-4">
-                    <div class="text-center">
-                        <img src="images/reactjs-logo.png" style="height: 100px;"/>
-                        <h3>ReactJS</h3>
-                    </div>
-                    <p>Front-end MV frameworks are gaining a lot of popularity due to more focus to user experience with rich interfaces across many devices. <a>ReactJS</a> is one of the latest and greatest. Here we implement a version of <a>Flux</a> architecture with <a>Reflux</a>.</p>
-                </div>
-            </div>
-          </div>
+      <p>Built on Heroku with Nodejs and React/HTML/CSS, deliver value to your customer and your organization simultaneously. Rewards architecture to give valuable services to your customer. Seamless integration of key customer insights to your Sales Reps and Marketers with Heroku Connect. Configurable engagement tools stored in Postgres database to quickly and independently adapt to new markets.</p>
+
+      </div><!-- /main-content -->
+        
+ 
+    <div class="row featured-stack">
+        <div class="col-md-4 col-sm-6 stack-card">
+          <img class="img-responsive" width="157" height="100" src="http://gonimbly.github.io/engager/images/salesforce-logo.png"/>
+          <h3 class="text-center">Salesforce.com</h3>
+          <p class="text-center">Using the Force.com platform, "Key customers insights" are integrated back into the place Reps and Marketers live, Salesforce.com. Allowing for immediate action and easy reporting to spot trends.</p>
         </div>
-    </div>
-    <div class="container">
-      <div id="footer">
-        <p class="text-muted">Go Nimbly, 2015.</p>
-      </div>
+        <div class="col-md-4 col-sm-6 stack-card">
+          <img class="img-responsive" width="88" height="100" src="http://gonimbly.github.io/engager/images/heroku-logo.png"/>
+          <h3 class="text-center">Heroku</h3>
+          <p class="text-center">Everything is easier with the power of Heroku. We deploy to Heroku, so we can focus on building a great customer experience and less on tedious tasks.</p>
+       </div>
+        <div class="col-md-4 col-sm-6 stack-card">
+          <img class="img-responsive" width="100" height="100" src="http://gonimbly.github.io/engager/images/javascript-logo.png"/>
+          <h3 class="text-center">JavaScript</h3>
+          <p class="text-center">JavaScript is powerful programming language with a vibrant and prolific open source community. Node.js powers the API, while ReactJS delivers rich experience to your customers.</p>
+        </div>
+
+        <div class="col-md-4 col-sm-6 stack-card">
+          <img class="img-responsive" width="113" height="100" src="http://gonimbly.github.io/engager/images/reactjs-logo.png"/>
+          <h3 class="text-center">ReactJS</h3>
+          <p class="text-center">Front-end MV frameworks focused on rich interfaces across many devices. <a href="https://facebook.github.io/react/">ReactJS</a> is one of the latest and greatest. Here we implement a version of <a href="https://facebook.github.io/flux/">Flux</a> architecture with <a href="https://github.com/reflux/refluxjs">Reflux</a>.</p>
+        </div>
+        <div class="col-md-4 col-sm-6 stack-card">
+          <img class="img-responsive" width="100" height="100" src="http://gonimbly.github.io/engager/images/bookshelf-logo.png"/>
+          <h3 class="text-center">Bookshelf</h3>
+          <p class="text-center">ORMs have been around forever. It's super easy to access relational data with this handy javascript library, <a href="http://bookshelfjs.org/">Bookshelf</a>.</p>
+       </div>
+        <div class="col-md-4 col-sm-6 stack-card">
+          <img class="img-responsive" width="100" height="100" src="http://gonimbly.github.io/engager/images/redis-logo.png"/>
+          <h3 class="text-center">Redis</h3>
+          <p class="text-center">Redis is commonly used as a datastore for user sessions, to enable quicker access and avoid hitting the database. Heroku now offers Redis natively, so keeping your app speedy is easier than ever.</p>
+        </div>
+      </div><!-- /row -->
+
+    </div><!-- /container -->
+
+    <footer>
+      <p class="text-muted"><a href="http://gonimbly.com">Go Nimbly 2015</a></p>
+      </footer>
       <!-- Site footer --> 
-    </div>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
