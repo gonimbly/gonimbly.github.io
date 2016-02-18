@@ -31,18 +31,14 @@
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li>
-                  <a href="https://github.com/gonimbly/engager-api">API</a>
-                </li>
-                <li>
-                  <a href="https://github.com/gonimbly/engager-ui">UI</a>
-                </li>
-                <li>
-                  <img src="images/blackoctocat.png" style="border: none;margin-top: 10px;height: 28px;width: 28px;"/>
+                  <a href="https://github.com/gonimbly/engager-app">
+                    <img src="images/blackoctocat.png" style="border: none;margin-top: 10px;height: 28px;width: 28px;"/>
+                  </a>
                 </li>
               </ul>
           </div><!--/.nav-collapse -->
       </div>
-  </div>
+    </div>
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -50,11 +46,10 @@
           <div class="row" style="text-align: center">
               <img src="images/architecture.png" width="100%" alt="heroku architecture">
           </div>
-          <h2>API Server</h2>
-          <p>The API utilizes a combination of open source technology and services to provide a speedy REST API for wide variety of potential client applications. On top of our postgres database, sits our ORM wrapper in Bookshelf, and API routes are exposed with Express. All protected endpoints will verified against our redis database to ensure the user is properly authenticated and has access to correct data/fuctions.</p>
+          <h2>API and App Server</h2>
+          <p>The <bold>API</bold> utilizes a combination of open source technology and services to provide a speedy REST API for wide variety of potential client applications. On top of our postgres database, sits our ORM wrapper in Bookshelf, and API routes are exposed with Express. All protected endpoints will verified against our redis database to ensure the user is properly authenticated and has access to correct data/fuctions.</p>
           
-          <h2>UI Server</h2>
-          <p>The UI is served from another Heroku app which points to the API server. This ensures that our UI is only for servering UI and static files, while our API is only concerned with answering web requests (no static files). This architecture helps to speed up the application experience, and provides a modular design so we can make more client applications (iOS, android, desktop) and not have to rewrite any our API server.</p>
+          <p>For simplicity the <bold>App</bold> is served from the same server as the API. If the application grows, it may make sense to split these in two distinct servers to ensure higher level of performance.</p>
 
           <h2>Salesforce UI</h2>
           <p>If Heroku Connect is configured, answers to user questions will be pushed automatically into the Salesforce instance.</p>
