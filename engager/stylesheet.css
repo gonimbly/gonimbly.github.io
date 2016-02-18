@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "SentinelSSm-Medium";
+    src: url("fonts/SentinelSSm-Medium.woff") format('woff');
+}
+
+@font-face {
+    font-family: "myfont";
+    src: url("fonts/SentinelSSm-Medium.woff") format('woff');
+}
+
+@font-family-base: "myfont";
+
+.jumbotron.banner {
+    background-color: white;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+.footer {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.body {
+	font-family: "myfont";
+}
