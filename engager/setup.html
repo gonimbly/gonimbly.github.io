@@ -31,36 +31,22 @@
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li>
-                  <a href="https://github.com/gonimbly/engager-api">API</a>
-                </li>
-                <li>
-                  <a href="https://github.com/gonimbly/engager-ui">UI</a>
-                </li>
-                <li>
-                  <img src="images/blackoctocat.png" style="border: none;margin-top: 10px;height: 28px;width: 28px;"/>
+                  <a href="https://github.com/gonimbly/engager-app">
+                    <img src="images/blackoctocat.png" style="border: none;margin-top: 10px;height: 28px;width: 28px;"/>
+                  </a>
                 </li>
               </ul>
           </div><!--/.nav-collapse -->
       </div>
-  </div>
+    </div>
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <h1>Setup</h1>
-          <p>The two step process for deploying Engager's API and UI. Deploy your own version of Engager using the Heroku buttons below. <em>Please note this UI is only meant to be used in Mobile Browsers.</em></p>
-          
-          <h2>Heroku Buttons</h2>
-          <h4>Engager API</h4>
-          <a href="https://heroku.com/deploy?template=https://github.com/gonimbly/engager-api/tree/master" target="blank"><img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy"></a> 
-          <p>
-            <em>On successful deployment, the herokuapp root will show a "Thank you" message.</em>
-          </p>
-
-          <h4>Engager UI</h4>
-          <a href="https://heroku.com/deploy?template=https://github.com/gonimbly/engager-ui/tree/master" target="blank"><img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy"></a> 
-          <p>
-            <em>Use url from API as config variable API_URL w/o the ending slash, ex: "https://engager-api123.herokuapp.com"</em>
-          </p>
+          <p>Deploy your own version of Engager using the Heroku buttons below. <em>Please note this UI is only meant to be used in Mobile Browsers.</em></p>
+        
+          <h4>Engager App</h4>
+          <a href="https://heroku.com/deploy?template=https://github.com/gonimbly/engager-app/tree/master" target="blank"><img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy"></a> 
 
           <h2>Using Heroku Connect for Answers (optional)</h2>
           <ol>
@@ -68,7 +54,7 @@
                 <p>Install the <a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t61000000R1x2" target="blank">unmanaged package</a> to your desired salesforce org first.</p>
               </li>
               <li>
-                <p>In Heroku UI of your new app, provision herokuconnect addon, via quick search addons menu.</p>
+                <p>In Heroku, provision "Heroku Connect" addon, via quick search addons menu. As of now, the url for app configuration is <a href="https://dashboard.heroku.com/apps/engager-demo-yyyy/resources" target="blank">here.</a></p>
               </li>
               <li>
                 <p>Click the Heroku Connect addon, after creation to configure the service to your Salesforce instance.</p>
@@ -95,11 +81,11 @@
                 <p>More info on <a href="https://devcenter.heroku.com/articles/herokuconnect#create-a-new-instance" target="blank">Heroku Connect here.</a></p>
               </li>
           </ol>
-          <h2>Deploying API to Heroku using the Command Line</h2>
+          <h2>Deploying the App to Heroku using the Command Line</h2>
           <ol>
               <li>
-                <p>Clone the API repository:</p>
-                <pre><code class="language-text" data-lang="text">git clone https://github.com/gonimbly/engager-api</code></pre>
+                <p>Clone the App repository:</p>
+                <pre><code class="language-text" data-lang="text">git clone https://github.com/gonimbly/engager-app</code></pre>
               </li>
               <li>
                 <p>Create the Heroku app:</p>
@@ -114,31 +100,12 @@
                 <pre><code class="language-text" data-lang="text">heroku addons:create heroku-redis:hobby-dev</code></pre>
               </li>
               <li>
-                <p>Deploy the Engager API:</p>
+                <p>Deploy the Engager App:</p>
                 <pre><code class="language-text" data-lang="text">git push heroku master</code></pre>
               </li>
               <li>
                 <p>Initialize the database:</p>
                 <pre><code class="language-text" data-lang="text">heroku run init-db</code></pre>
-              </li>
-          </ol>
-          <h2>Deploying UI to Heroku using the Command Line</h2>
-          <ol>
-              <li>
-                <p>Clone the UI repository:</p>
-                <pre><code class="language-text" data-lang="text">git clone https://github.com/gonimbly/engager-ui</code></pre>
-              </li>
-              <li>
-                <p>Create the Heroku app:</p>
-                <pre><code class="language-text" data-lang="text">heroku create</code></pre>
-              </li>
-              <li>
-                <p>Deploy the UI:</p>
-                <pre><code class="language-text" data-lang="text">git push heroku master</code></pre>
-              </li>
-              <li>
-                <p>Set the API config variable:</p>
-                <pre><code class="language-text" data-lang="text">heroku config:set API_URL='https://sample-api-url.herokuapp.com'</code></pre>
               </li>
           </ol>
           <h2>Running Locally</h2>
