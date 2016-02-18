@@ -108,49 +108,37 @@
                 <pre><code class="language-text" data-lang="text">heroku run init-db</code></pre>
               </li>
           </ol>
-          <h2>Running Locally</h2>
-          <p>Two services need to be setup and started in order for the application to run locally. Also for the sake of easy setup, we'll be using the externally hosted heroku-postgres and heroku-redis databases to store information.</p>
+          <h2>Running Locally (assuming OSX environment)</h2>
+          <p>For the sake of easy setup, we'll be using the externally hosted heroku-postgres and heroku-redis databases to store information. So, if you already haven't deployed Engager via Heroku Button, please do this before attempting to run locally.</p>
           <ol>
               <li>
-                <p>Clone the API repository:</p>
-                <pre><code class="language-text" data-lang="text">git clone https://github.com/gonimbly/engager-api</code></pre>
+                <p>Clone the App repository:</p>
+                <pre><code class="language-text" data-lang="text">git clone https://github.com/gonimbly/engager-app</code></pre>
               </li>
               <li>
                 <p>Install the dependencies:</p>
                 <pre><code class="language-text" data-lang="text">npm i</code></pre>
               </li>
               <li>
-                <p>Retrieve database environment variables Heroku (must run "heroku addons:create .." first):</p>
-                <pre><code class="language-text" data-lang="text">heroku config</code></pre>
+                <p>Retrieve datastore environment variables from Heroku (pre-requisit is deploy Engager via Heroku Button):</p>
+                <pre><code class="language-text" data-lang="text">heroku config --app DEMO-ENGAGER-APP</code></pre>
               </li>
               <li>
-                <p>Set local environment variables (note ssl=true):</p>
-                <pre><code class="language-text" data-lang="text">export DATABASE_URL="postgres://{connection_str}?ssl=true"</code></pre>
-                <pre><code class="language-text" data-lang="text">export REDIS_URL="redis://{connection_str}"</code></pre>
+                <p>Set local environment variables:</p>
+                <pre><code class="language-text" data-lang="text">export DATABASE_URL="{postgres_connection_str}"</code></pre>
+                <pre><code class="language-text" data-lang="text">export REDIS_URL="{redis_connection_str}"</code></pre>
               </li>
               <li>
                 <p>Initialize the database:</p>
                 <pre><code class="language-text" data-lang="text">npm run init-db</code></pre>
               </li>
               <li>
-                <p>Start the API:</p>
+                <p>Start the App:</p>
                 <pre><code class="language-text" data-lang="text">npm run start</code></pre>
               </li>
               <li>
-                <p>In a new terminal tab, navigate up a directory and clone the UI repository:</p>
-                <pre><code class="language-text" data-lang="text">git clone https://github.com/gonimbly/engager-ui</code></pre>
-              </li>
-              <li>
-                <p>Install the dependencies:</p>
-                <pre><code class="language-text" data-lang="text">npm i</code></pre>
-              </li>
-              <li>
-                <p>Set the API config variable:</p>
-                <pre><code class="language-text" data-lang="text">export API_URL='https://localhost:9000'</code></pre>
-              </li>
-              <li>
-                <p>Start the UI:</p>
-                <pre><code class="language-text" data-lang="text">npm start</code></pre>
+                <p>Visit in your browser:</p>
+                <pre><code class="language-text" data-lang="text">open http://localhost:9000/</code></pre>
               </li>
           </ol>
         </div>
